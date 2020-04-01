@@ -8,13 +8,10 @@ import { Response, Request, NextFunction } from "express";
  * List of API examples.
  */
 export const getApi = (req: Request, res: Response) => {
-    res.render("api/index", {
-        title: "API Examples"
-    });
+    res.send("test")
 };
 
 /**
  * GET /api/facebook
  * Facebook API example.
  */
-export const getFacebook = (req: Request, res: Response, next: NextFunction) => {};
