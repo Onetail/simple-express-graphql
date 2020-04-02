@@ -1,13 +1,16 @@
-export type UserDocument =  {
-    email: string;
-    password: string;
-    passwordResetToken: string;
-    passwordResetExpires: Date;
-    profile: {
-        name: string;
-        gender: string;
-        location: string;
-        website: string;
-        picture: string;
-    };
-};
+import { Table, Column, Model } from "sequelize-typescript";
+
+@Table({
+  tableName: "users"
+})
+export class User extends Model<User> {
+  @Column({
+    primaryKey: true,
+    autoIncrement: true
+  })
+  id: number;
+
+  @Column
+  email: string;
+
+}
