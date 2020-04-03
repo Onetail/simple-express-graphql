@@ -1,3 +1,13 @@
 type Query {
-  helloWorld: String!
+  Users: [User!]
+  User(userId: Int): User
+}
+
+"""
+User type definition
+"""
+type User {
+  id: ID!
+  email: String
+  type: String
 }
