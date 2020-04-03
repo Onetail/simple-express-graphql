@@ -8,7 +8,7 @@ const User = new UserController(new UserService());
 const resolverMap: IResolvers = {
   Query: {
     Users: User.Users,
-    User: User.User
-  }
+    User: User.User,
+  },
 };
 export default resolverMap;

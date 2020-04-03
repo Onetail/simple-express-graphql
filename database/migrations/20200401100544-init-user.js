@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const tableName = "users";
 module.exports = {
@@ -15,20 +15,20 @@ module.exports = {
         type: TINYINT(1),
         createdAt: {
           type: DATE,
-          defaultValue: Sequelize.literal('NOW()'),
+          defaultValue: Sequelize.literal("NOW()"),
         },
         updatedAt: {
           type: DATE,
-          defaultValue: Sequelize.literal('NOW() ON UPDATE NOW()'),
+          defaultValue: Sequelize.literal("NOW() ON UPDATE NOW()"),
         },
       },
       {
-        charset: 'utf8', // default: null
+        charset: "utf8", // default: null
       }
     );
   },
 
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable(tableName);
-  }
+  },
 };

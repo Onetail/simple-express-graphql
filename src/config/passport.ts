@@ -4,6 +4,5 @@ import _ from "lodash";
 // import { User, UserType } from '../models/User';
 
 passport.serializeUser<any, any>((user, done) => {
-    done(undefined, user.id);
+  done(undefined, user.id);
 });
-
