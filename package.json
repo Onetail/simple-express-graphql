@@ -28,7 +28,10 @@
     "watch-debug": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-sass\" \"npm run watch-ts\" \"npm run serve-debug\"",
     "migration:init": "npx sequelize init:config && npx sequelize init:migrations",
     "migration:create": "run(){ NODE_ENV=local npx sequelize migration:generate --name=$1; }; run",
-    "migration:run": "NODE_ENV=local npx sequelize db:migrate"
+    "migration:run": "NODE_ENV=local npx sequelize db:migrate",
+    "seeder:init": "npx sequelize init:seeders",
+    "seeder:create": "run(){ NODE_ENV=local npx sequelize seed:generate --name=$1; }; run",
+    "seeder:run": "NODE_ENV=local npx sequelize db:seed:all"
   },
   "dependencies": {
     "@types/cors": "^2.8.6",
