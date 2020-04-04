@@ -9,9 +9,7 @@ export class UserService {
     }
 
     async findUserByUserId(userId: number): Promise<User> {
-        const result = await User.findOne({
-            where: { id: userId },
-        });
+        const result = await User.findOne({ where: { id: userId } });
         return result;
     }
 }
