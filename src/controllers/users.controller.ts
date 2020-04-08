@@ -11,10 +11,7 @@ export class UserController {
     };
     
     User = async (obj: any, args: any, context: any, info: any): Promise<User> => {
-        
           return await this.userService.findUserByUserId(args.userId);
     };
-    
-    
-    
+          
 }

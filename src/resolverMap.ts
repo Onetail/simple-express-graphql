@@ -10,5 +10,6 @@ const resolverMap: IResolvers = {
         Users: User.Users,
         User: User.User,
     },
+    Mutations: {},
 };
 export default resolverMap;
