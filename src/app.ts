@@ -15,13 +15,13 @@ import depthLimit from 'graphql-depth-limit';
 // Create Express server
 const app = express();
 const server = new ApolloServer({
-    schema,
-    validationRules: [depthLimit(7)],
+  schema,
+  validationRules: [ depthLimit(7) ],
 });
 
 // Sequelize connect mysql
 const sequelize = new Sequelize('mysql://root@127.0.0.1:3306/simpleTest-dev');
-sequelize.addModels([path.resolve(__dirname, './models/')]);
+sequelize.addModels([ path.resolve(__dirname, './models/') ]);
 
 // Express configuration
 app.set('port', process.env.PORT || 3000);
@@ -33,8 +33,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(lusca.xframe('SAMEORIGIN'));
 app.use(lusca.xssProtection(true));
 app.use((req, res, next) => {
-    res.locals.user = req.user;
-    next();
+  res.locals.user = req.user;
+  next();
 });
 
 app.use('*', cors());
@@ -49,11 +49,11 @@ server.applyMiddleware({ app, path: '/graphql' });
 // app.get("/", homeController.index);
 // app.get("/api", apiController.getApi);
 app.get(
-    '/',
-    graphqlHTTP({
-        schema: schema,
-        graphiql: true,
-    })
+  '/',
+  graphqlHTTP({
+    schema: schema,
+    graphiql: true,
+  })
 );
 
 /**
