@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  simple-graphql-mysql:
+    build: 
+      context: .
+      dockerfile: docker/mysql/Dockerfile
+    container_name: simple-graphql-mysql
+    # volumes:
+      # - ./data/mysql:/var/lib/mysql
+      # - ./sql/:/docker-entrypoint-initdb.d/
+    restart: always
+    ports: 
+     - '3318:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+      MYSQL_DATABASE: simpleTest-dev
+      MYSQL_PASSWORD: root
+    networks: 
+      - simple-graphql
+
+networks:
+  simple-graphql:
+    driver: bridge
+
+  
+
