@@ -114,7 +114,7 @@
     "graphql-import": "^1.0.1",
     "graphql-import-node": "0.0.4",
     "jest": "^24.9.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.19.2",
     "prettier": "^2.0.2",
     "sequelize-cli": "^6.2.0",
